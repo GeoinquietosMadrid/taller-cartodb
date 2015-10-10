@@ -1,8 +1,8 @@
-## Mapas de puntos por municipio
+# Mapas de puntos por municipio
 
 Es posible utilizar los datos puntuales directamente, tienen la ventaja sobre la agregación que informan sobre la distribución de la población y obviamente dan más detalle, aunque también pueden ser difíciles de leer.
 
-### Mapa de partido más votado
+## Mapa de partido más votado
 
 ![](./imgs/01_mas_votado.png)
 
