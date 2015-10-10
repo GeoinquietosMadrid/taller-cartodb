@@ -129,7 +129,7 @@ El resultado es [este mapa](https://jsanzacademy1.cartodb.com/viz/ae11e5d4-6ecb-
 
 ## PSOE versus PP
 
-![](03_pp_psoe.png)
+![](./imgs/03_pp_psoe.png)
 
 Este mapa muestra únicamente en qué partidos han obtenido más votos estos dos partidos dejando el resto en un color único para todos los demás.
 
@@ -189,3 +189,112 @@ CartoCSS:
 ```
 
 El resultado se puede consultar en [este mapa](https://jsanzacademy1.cartodb.com/viz/766c4ffc-6ec6-11e5-874d-0e3ff518bd15/public_map)
+
+
+
+## Abstenciones
+
+![](.imgs/04_abstenciones.png)
+
+Este es de nuevo un mapa sencillo y el único 'truco' sería que hay que ordenar los datos por la variable que vamos a usar para simbolizar para así tener los puntos de mayor valor sobre el resto ya que el renderizador pinta los puntos conforme le llegan de la consulta.
+
+SQL:
+
+```sql
+SELECT *
+FROM resultados_elecciones 
+ORDER BY abstencion_percent
+```
+
+CartoCSS:
+
+```css
+/** choropleth visualization */
+
+#resultados_elecciones{
+  marker-fill-opacity: 0.6;
+  marker-line-color: #FFF;
+  marker-line-width: 0;
+  marker-line-opacity: 1;
+  marker-width: 4;
+  marker-fill: #FFFFCC;
+  marker-allow-overlap: true;
+}
+#resultados_elecciones [ abstencion_percent <= 100] {
+   marker-fill: #0C2C84;
+}
+#resultados_elecciones [ abstencion_percent <= 40.23] {
+   marker-fill: #225EA8;
+}
+#resultados_elecciones [ abstencion_percent <= 30.43] {
+   marker-fill: #1D91C0;
+}
+#resultados_elecciones [ abstencion_percent <= 24.91] {
+   marker-fill: #41B6C4;
+}
+#resultados_elecciones [ abstencion_percent <= 19.92] {
+   marker-fill: #7FCDBB;
+}
+#resultados_elecciones [ abstencion_percent <= 15.14] {
+   marker-fill: #C7E9B4;
+}
+#resultados_elecciones [ abstencion_percent <= 10.3] {
+   marker-fill: #FFFFCC;
+}
+```
+
+El resultado es [este mapa](https://jsanzacademy1.cartodb.com/viz/6b40d03a-6ecb-11e5-9096-0ecfd53eb7d3/public_map).
+
+
+
+## Votos nulos
+
+![](.imgs/05_nulos.png)
+
+SQL:
+
+```sql
+SELECT *
+FROM resultados_elecciones 
+ORDER BY votos_nulos_percent
+```
+
+CartoCSS:
+
+```css
+/** choropleth visualization */
+
+#resultados_elecciones{
+  marker-fill-opacity: 0.6;
+  marker-line-color: #FFF;
+  marker-line-width: 0;
+  marker-line-opacity: 1;
+  marker-width: 4;
+  marker-fill: #FFFFCC;
+  marker-allow-overlap: true;
+}
+#resultados_elecciones [ votos_nulos_percent <= 62.5] {
+   marker-fill: #0C2C84;
+}
+#resultados_elecciones [ votos_nulos_percent <= 30.66] {
+   marker-fill: #225EA8;
+}
+#resultados_elecciones [ votos_nulos_percent <= 12.31] {
+   marker-fill: #1D91C0;
+}
+#resultados_elecciones [ votos_nulos_percent <= 8.86] {
+   marker-fill: #41B6C4;
+}
+#resultados_elecciones [ votos_nulos_percent <= 5.97] {
+   marker-fill: #7FCDBB;
+}
+#resultados_elecciones [ votos_nulos_percent <= 3.23] {
+   marker-fill: #C7E9B4;
+}
+#resultados_elecciones [ votos_nulos_percent <= 3.2] {
+   marker-fill: #FFFFCC;
+}
+```
+
+
+El resultado es [este mapa](https://jsanzacademy1.cartodb.com/viz/eac2b5a0-6ec9-11e5-81e7-0e3ff518bd15/public_map).
