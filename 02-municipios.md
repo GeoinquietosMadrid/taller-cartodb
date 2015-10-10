@@ -194,7 +194,7 @@ El resultado se puede consultar en [este mapa](https://jsanzacademy1.cartodb.com
 
 ## Abstenciones
 
-![](.imgs/04_abstenciones.png)
+![](./imgs/04_abstenciones.png)
 
 Este es de nuevo un mapa sencillo y el único 'truco' sería que hay que ordenar los datos por la variable que vamos a usar para simbolizar para así tener los puntos de mayor valor sobre el resto ya que el renderizador pinta los puntos conforme le llegan de la consulta.
 
@@ -249,7 +249,7 @@ El resultado es [este mapa](https://jsanzacademy1.cartodb.com/viz/6b40d03a-6ecb-
 
 ## Votos nulos
 
-![](.imgs/05_nulos.png)
+![](./imgs/05_nulos.png)
 
 SQL:
 
